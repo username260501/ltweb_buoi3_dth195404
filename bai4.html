@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Bài 4</title>
+	<meta charset="utf-8" />
+
+</head>
+
+<body>
+	<script>
+		function KiemTra() {
+			// //cách 1
+			// var tendangnhap = document.getElementsByName('tendangnhap').values;
+
+			//cách 2
+			//lấy giá trị của 3 ô
+			var tdn = form.tendangnhap.value;
+			var mk = form.pass.value;
+			var xacnhan = form.xacnhanpass.value;
+
+			if (tdn == "" || mk == "" || xacnhan == "") {
+				alert("Các ô không được để trống");
+				return false;
+			}
+
+			if (xacnhan != mk) {
+				alert("Mật khẩu nhập lại không giống mật khẩu");
+				return false;
+			}
+
+			if (tdn.length < 6) {
+				alert("Tên đăng nhập nhiều hơn 5 kí tự");
+				return false;
+			}
+			return true;
+		}	
+	</script>
+
+	<form name="form">
+		<table>
+			<tr>
+				<td>Tên đăng nhập: </td>
+				<td><input type="text" name="tendangnhap"></td>
+				<td>(nhiều hơn 6 ký tự)</td>
+			</tr>
+			<tr>
+				<td>Mật khẩu: </td>
+				<td><input type="password" name="pass"></td>
+			</tr>
+			<tr>
+				<td>Nhập lại mật khẩu: </td>
+				<td><input type="password" name="xacnhanpass"></td>
+			</tr>
+		</table>
+		<button type="submit" onclick="return KiemTra()">Kiểm tra</button>
+	</form>
+</body>
+
+</html>
